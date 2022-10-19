@@ -1,0 +1,29 @@
+.toolbar {
+  display: flex;
+  justify-content: space-between;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  background-color: #d21919;
+  color: white;
+  font-weight: 300;
+}
+
+.toolbar img {
+  margin: 0 16px;
+}
+
+.logoTextContainer {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+
+
+}
+button {
+  margin-right: 10px;
+  font-weight: 800;
+  color:#d21919;
+  border:none;
+  background-color: white;
+}
