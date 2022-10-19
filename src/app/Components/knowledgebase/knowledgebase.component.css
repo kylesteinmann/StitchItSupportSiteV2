@@ -1,0 +1,27 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 40px 0 0 0;
+  position:inherit;
+}
+h1{
+  color:black;
+}
+
+button {
+  margin: 0 10px 0 10px;
+  padding:10px 20px;
+  font-weight: 500;
+  font-size: large;
+  background-color: #d21919;
+  color: white;
+  border: none;
+  border-radius: 5px;
+}
+.buttonContainer {
+  margin:30px 0 0 0;
+  display: flex;
+  justify-content: center;
+}

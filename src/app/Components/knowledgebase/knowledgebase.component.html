@@ -1,1 +1,14 @@
-<p>knowledgebase works!</p>
+<div class="container">
+  <header>
+    <h1>What type of machine do you have?</h1>
+
+  </header>
+  <div class="buttonContainer">
+    <button
+      *ngFor="let button of knowledgebaseButtonsService.uniqueTypeButtons()"
+      routerLink="knowledgebaseButtonsService.machineTypeButton.brandRoute"
+    >
+      {{ button.type }}
+    </button>
+  </div>
+</div>
