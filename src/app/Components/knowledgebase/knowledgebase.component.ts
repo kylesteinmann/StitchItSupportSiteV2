@@ -8,6 +8,8 @@ import { KnowledgebaseButtonsService } from 'src/app/Services/knowledgebase-butt
 })
 export class KnowledgebaseComponent implements OnInit {
 
+
+
   constructor(public knowledgebaseButtonsService:KnowledgebaseButtonsService) { }
 
   ngOnInit(): void {

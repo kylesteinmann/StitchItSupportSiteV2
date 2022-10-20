@@ -1,14 +1,53 @@
 <div class="container">
-  <header>
-    <h1>What type of machine do you have?</h1>
-
-  </header>
+  <h1>
+    <h1>Please select an option to narrow down your search.</h1>
+  </h1>
   <div class="buttonContainer">
+
+
+
     <button
       *ngFor="let button of knowledgebaseButtonsService.uniqueTypeButtons()"
-      routerLink="knowledgebaseButtonsService.machineTypeButton.brandRoute"
+      #buttonSelected
+      (click)="
+        knowledgebaseButtonsService.typeSelected = buttonSelected.textContent;
+        knowledgebaseButtonsService.uniqueBrandButtons()
+      "
     >
       {{ button.type }}
     </button>
   </div>
+  <div class="buttonContainer" *ngIf="knowledgebaseButtonsService.brandClicked">
+    <button
+      *ngFor="let button of knowledgebaseButtonsService.uniqueBrand"
+      #buttonSelected
+      (click)="
+        knowledgebaseButtonsService.brandSelected = buttonSelected.textContent
+      "
+    >
+      {{ button.brand }}
+    </button>
+  </div>
 </div>
+<div class="buttonContainer" *ngIf="knowledgebaseButtonsService.modelClicked">
+  <button
+    *ngFor="let button of knowledgebaseButtonsService.uniqueModel"
+    #buttonSelected
+    (click)="
+      knowledgebaseButtonsService.modelSelected = buttonSelected.textContent
+    "
+  >
+    {{ button.model }}
+  </button>
+</div>
+
+<!-- <div class="buttonContainer" *ngIf="knowledgebaseButtonsService.modelClicked">
+  <button
+    *ngFor="let button of knowledgebaseButtonsService.uniqueModelButtons()"
+    #buttonSelected (click)="knowledgebaseButtonsService.brandSelected = buttonSelected.textContent"
+    >
+    {{ button.model }}
+  </button>
+</div>
+
+ knowledgebaseButtonsService.uniqueModelButtons() -->
