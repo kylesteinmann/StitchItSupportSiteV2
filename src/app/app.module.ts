@@ -4,6 +4,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { FormsModule } from '@angular/forms';
+import {MatCardModule} from '@angular/material/card'
 
 
 import { AppComponent } from './app.component';
@@ -30,7 +31,8 @@ import { KnowledgebaseComponent } from './Components/knowledgebase/knowledgebase
     AppRoutingModule,
     BrowserAnimationsModule,
     MatButtonModule,
-    FormsModule
+    FormsModule,
+    MatCardModule
 
 
   ],

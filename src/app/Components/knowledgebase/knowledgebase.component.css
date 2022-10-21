@@ -29,3 +29,17 @@ button {
   display: flex;
   justify-content: center;
 }
+mat-card {
+  color:black;
+  border:solid 1px #d21919;
+  width:250px;
+}
+.mediaContainer {
+  display: flex;
+  justify-content: center;
+  margin:20px;
+
+}
+a {
+  text-decoration: none;
+}
