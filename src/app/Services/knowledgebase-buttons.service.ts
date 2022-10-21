@@ -45,7 +45,10 @@ export class KnowledgebaseButtonsService {
 
     this.brandClicked = true;
 
-    const filteredTypeArray = this.machineTypeButton.filter(filter => filter.type == this.typeSelected)
+    const filteredTypeArray = this.machineTypeButton.filter(filter =>  {
+      console.log(filter)
+      return filter.type.trim() === this.typeSelected.trim()
+    })
     console.log(filteredTypeArray)
     console.log(this.typeSelected)
 
@@ -58,8 +61,5 @@ export class KnowledgebaseButtonsService {
       }
       return false;
     });
-    console.log(unique)
     return unique
-
-
   }}
