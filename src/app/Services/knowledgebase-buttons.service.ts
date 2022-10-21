@@ -9,24 +9,36 @@ export class KnowledgebaseButtonsService {
 
   machineTypeButton = [
     {
-      type: "Embroidery Machine", brandRoute: "/embroideryBrands", brand: "SWF", modelsRoute: "/swfModels", model: "a series", modelInfoRoute: ""
+      type: "Embroidery Machine", brand: "SWF", model: "a series", mediaName:" SWF test", mediaDescription:"SWF tested test", media: "https://console.gotoassist.com/#/console"
     },
     {
-      type: "White Toner/Sublimation Printer", brandRoute: "/printerBrands", brand: "OKI", modelsRoute: "/printerModels", model: "Pro9541WT", modelInfoRoute: ""
-    }, {
-      type: "White Toner/Sublimation Printer", brandRoute: "/printerBrands", brand: "OKI", modelsRoute: "/printerModels", model: "8432", modelInfoRoute: ""
+      type: "White Toner/Sublimation Printer", brand: "OKI", model: "Pro9541WT", mediaName:"OKI test", mediaDescription:"OKI tested test", media: "https://stitch-it-international-inc.helpscoutdocs.com/article/239-helpful-links-and-tutorials"
+    },
+    {
+      type: "Embroidery Machine", brand: "SWF", model: "a series", mediaName:" SWF test", mediaDescription:"SWF tested test", media: "https://console.gotoassist.com/#/console"
+    },
+    {
+      type: "White Toner/Sublimation Printer", brand: "OKI", model: "Pro9541WT", mediaName:"OKI test", mediaDescription:"OKI tested test", media: "https://stitch-it-international-inc.helpscoutdocs.com/article/239-helpful-links-and-tutorials"
+    },
+    {
+      type: "Embroidery Machine", brand: "SWF", model: "a series", mediaName:" SWF test", mediaDescription:"SWF tested test", media: "https://console.gotoassist.com/#/console"
+    },
+    {
+      type: "White Toner/Sublimation Printer", brand: "OKI", model: "Pro9541WT", mediaName:"OKI test", mediaDescription:"OKI tested test", media: "https://stitch-it-international-inc.helpscoutdocs.com/article/239-helpful-links-and-tutorials"
     }
   ];
 
   typeClicked: Boolean = true;
   brandClicked: Boolean = false;
   modelClicked: Boolean = false;
+  mediaClicked: Boolean = false;
   typeSelected = "";
   brandSelected = "";
   modelSelected = "";
   uniqueType = []
-  uniqueBrand =[]
-  uniqueModel=[]
+  uniqueBrand = []
+  uniqueModel = []
+  uniqueMedia = []
 
 
   uniqueTypeButtons() {
@@ -41,19 +53,13 @@ export class KnowledgebaseButtonsService {
     });
     return unique
   }
+
+
   uniqueBrandButtons() {
-
-    this.brandClicked = true;
-
-    const filteredTypeArray = this.machineTypeButton.filter(filter =>  {
-      console.log(filter)
-      return filter.type.trim() === this.typeSelected.trim()
-    })
-    console.log(filteredTypeArray)
-    console.log(this.typeSelected)
-
-
-    let unique = filteredTypeArray.filter(element => {
+    this.typeClicked = !this.typeClicked;;
+    this.brandClicked = !this.brandClicked;;
+    const filteredTypeArray = this.machineTypeButton.filter(filter => filter.type.trim() === this.typeSelected.trim())
+    this.uniqueBrand = filteredTypeArray.filter(element => {
       const isDuplicate = this.uniqueBrand.includes(element.brand);
       if (!isDuplicate) {
         this.uniqueBrand.push(element.brand);
@@ -61,5 +67,35 @@ export class KnowledgebaseButtonsService {
       }
       return false;
     });
-    return unique
-  }}
+    return this.uniqueBrand
+  }
+
+
+  uniqueModelButtons() {
+    this.brandClicked = !this.brandClicked;
+    this.modelClicked = !this.modelClicked;
+    const filteredTypeArray = this.machineTypeButton.filter(filter => filter.brand.trim() === this.brandSelected.trim())
+    console.log(filteredTypeArray)
+    console.log(this.modelSelected)
+    this.uniqueModel = filteredTypeArray.filter(element => {
+      const isDuplicate = this.uniqueModel.includes(element.model);
+      if (!isDuplicate) {
+        this.uniqueModel.push(element.model);
+        return true;
+      }
+      return false;
+    });
+    return this.uniqueModel
+  }
+
+  uniqueMediaCards() {
+    this.uniqueMedia = this.machineTypeButton.filter(filter => filter.brand.trim() === this.brandSelected.trim())
+    this.modelClicked = !this.modelClicked;
+    this.mediaClicked = !this.mediaClicked;
+
+    console.log(this.uniqueModel)
+  }
+
+}
+
+

@@ -2,10 +2,8 @@
   <h1>
     <h1>Please select an option to narrow down your search.</h1>
   </h1>
-  <div class="buttonContainer">
 
-
-
+  <div class="buttonContainer" *ngIf="knowledgebaseButtonsService.typeClicked">
     <button
       *ngFor="let button of knowledgebaseButtonsService.uniqueTypeButtons()"
       #buttonSelected
@@ -15,39 +13,40 @@
       "
     >
       {{ button.type }}
-        </button>
+    </button>
   </div>
+
   <div class="buttonContainer" *ngIf="knowledgebaseButtonsService.brandClicked">
     <button
       *ngFor="let button of knowledgebaseButtonsService.uniqueBrand"
       #buttonSelected
       (click)="
-        knowledgebaseButtonsService.brandSelected = buttonSelected.textContent
+        knowledgebaseButtonsService.brandSelected = buttonSelected.textContent;
+        knowledgebaseButtonsService.uniqueModelButtons()
       "
     >
       {{ button.brand }}
     </button>
   </div>
 </div>
+
 <div class="buttonContainer" *ngIf="knowledgebaseButtonsService.modelClicked">
   <button
     *ngFor="let button of knowledgebaseButtonsService.uniqueModel"
     #buttonSelected
     (click)="
-      knowledgebaseButtonsService.modelSelected = buttonSelected.textContent
+      knowledgebaseButtonsService.modelSelected = buttonSelected.textContent;
+      knowledgebaseButtonsService.uniqueMediaCards()
     "
   >
     {{ button.model }}
   </button>
 </div>
 
-<!-- <div class="buttonContainer" *ngIf="knowledgebaseButtonsService.modelClicked">
-  <button
-    *ngFor="let button of knowledgebaseButtonsService.uniqueModelButtons()"
-    #buttonSelected (click)="knowledgebaseButtonsService.brandSelected = buttonSelected.textContent"
-    >
-    {{ button.model }}
-  </button>
+<div class="mediaContainer" *ngIf="knowledgebaseButtonsService.mediaClicked">
+  <mat-card *ngFor="let item of knowledgebaseButtonsService.uniqueMedia">
+    <a [href]="item.media">
+      <mat-card-title>{{ item.mediaName }}</mat-card-title>
+      <mat-card-content>{{ item.mediaDescription }}</mat-card-content></a>
+  </mat-card>
 </div>
-
- knowledgebaseButtonsService.uniqueModelButtons() -->
