@@ -4,7 +4,8 @@ import { MatButtonModule } from '@angular/material/button';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { FormsModule } from '@angular/forms';
-import {MatCardModule} from '@angular/material/card'
+import {MatCardModule} from '@angular/material/card';
+import {HttpClientModule} from '@angular/common/http'
 
 
 import { AppComponent } from './app.component';
@@ -13,6 +14,7 @@ import { SupportFormComponent } from './Components/support-form/support-form.com
 import { SubmitSuccessComponent } from './Components/submit-success/submit-success.component';
 import { TrainingComponent } from './Components/training/training.component';
 import { KnowledgebaseComponent } from './Components/knowledgebase/knowledgebase.component';
+import { AdminPortalComponent } from './Components/admin-portal/admin-portal.component';
 
 
 
@@ -23,7 +25,8 @@ import { KnowledgebaseComponent } from './Components/knowledgebase/knowledgebase
     SupportFormComponent,
     SubmitSuccessComponent,
     TrainingComponent,
-    KnowledgebaseComponent
+    KnowledgebaseComponent,
+    AdminPortalComponent
 
   ],
   imports: [
@@ -32,7 +35,8 @@ import { KnowledgebaseComponent } from './Components/knowledgebase/knowledgebase
     BrowserAnimationsModule,
     MatButtonModule,
     FormsModule,
-    MatCardModule
+    MatCardModule,
+    HttpClientModule
 
 
   ],

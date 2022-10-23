@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "stitch-it-support-site": {
+      "hosting": {
+        "StitchItSupportSiteV2": [
+          "stitch-it-support-site"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "stitch-it-support-site"
+  }
+}

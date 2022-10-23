@@ -30,7 +30,7 @@ export class TicketService {
     this.ticketSubmitted.success = 'true';
     console.log(this.ticket);
     this.router.navigateByUrl('/submitSuccess');
-    setTimeout(() => this.router.navigateByUrl('/typeOfMachine'), 4000);
+    setTimeout(() => this.router.navigateByUrl(''), 4000);
     setTimeout(() => (this.ticketSubmitted.success = 'false'), 4000);
   }
 }

@@ -4,6 +4,9 @@ import { SupportFormComponent } from './Components/support-form/support-form.com
 import { HeaderComponent } from './Components/header/header.component';
 import { SubmitSuccessComponent } from './Components/submit-success/submit-success.component';
 import { TrainingComponent } from './Components/training/training.component';
+import { AdminPortalComponent } from './Components/admin-portal/admin-portal.component';
+import { KnowledgebaseButtonsService } from './Services/knowledgebase-buttons.service';
+import { KnowledgebaseComponent } from './Components/knowledgebase/knowledgebase.component';
 
 
 
@@ -12,7 +15,10 @@ const routes: Routes = [
   {path: 'supportForm', component: SupportFormComponent},
   {path: 'header', component: HeaderComponent},
   {path:'successSubmit', component: SubmitSuccessComponent},
-  {path:'training', component:TrainingComponent}
+  {path:'training', component:TrainingComponent},
+  {path: 'adminPortal', component:AdminPortalComponent},
+  {path:'', component:KnowledgebaseComponent}
+
 
 ];
 

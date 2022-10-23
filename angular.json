@@ -96,6 +96,16 @@
             ],
             "scripts": []
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {
+            "prerender": false,
+            "ssr": false,
+            "browserTarget": "StitchItSupportSiteV2:build:production",
+            "firebaseProject": "stitch-it-support-site",
+            "firebaseHostingSite": "stitch-it-support-site"
+          }
         }
       }
     }

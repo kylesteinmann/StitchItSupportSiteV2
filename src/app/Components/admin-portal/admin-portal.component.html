@@ -1,0 +1,11 @@
+<form>
+  <label for="typeOfMachine">Machine Type:</label>
+  <select name="typeOfMachine" id="typeOfMachine">
+    <option
+      value="Type of Machine"
+      *ngFor="let option of knowledgebaseButtonsService.uniqueTypeButtons()"
+    >
+      {{ option.type }}
+    </option>
+  </select>
+</form>
