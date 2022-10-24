@@ -44,8 +44,8 @@
 
   <div class="mediaContainer" *ngIf="knowledgebaseButtonsService.mediaClicked">
     <mat-card *ngFor="let item of knowledgebaseButtonsService.uniqueMedia">
-      <a [href]="item.media">
-        <mat-card-title>{{ item.mediaName }}</mat-card-title>
+      <a [href]="item.mediaUrl">
+        <mat-card-title>{{ item.mediaTitle }}</mat-card-title>
         <mat-card-content>{{ item.mediaDescription }}</mat-card-content></a
       >
     </mat-card>

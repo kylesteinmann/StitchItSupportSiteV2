@@ -1,9 +1,10 @@
 <form
-  [formGroup]="adminPortal.addMediaForm"
-  (ngSubmit)="(adminPortal.addMedia)"
+  [formGroup]="addMediaForm"
+  (ngSubmit)="adminPortal.addMedia(addMediaForm.value)"
 >
+  <!-- type -->
   <div class="section">
-    <div class="individualFields"*ngIf="!newTypeToggle">
+    <div class="individualFields" *ngIf="!newTypeToggle">
       <mat-form-field appearance="fill">
         <mat-label>Machine Type</mat-label>
         <mat-select formControlName="type">
@@ -15,17 +16,16 @@
           </mat-option>
         </mat-select>
       </mat-form-field>
-      <button  (click)="newTypeToggle = !newTypeToggle">+</button>
+      <button (click)="newTypeToggle = !newTypeToggle">+</button>
     </div>
-    <mat-form-field class="mediaUrl" appearance="fill" *ngIf="newTypeToggle" >
+    <mat-form-field class="type" appearance="fill" *ngIf="newTypeToggle">
       <mat-label>Type</mat-label>
       <input matInput formControlName="type" />
     </mat-form-field>
-  </div>
 
-  <div class="section">
+    <!-- brand -->
 
-    <div class="individualFields"*ngIf="!newBrandToggle">
+    <div class="individualFields" *ngIf="!newBrandToggle">
       <mat-form-field appearance="fill">
         <mat-label>Machine Brand</mat-label>
         <mat-select formControlName="brand">
@@ -37,17 +37,16 @@
           </mat-option>
         </mat-select>
       </mat-form-field>
-      <button mat-mini-fab (click)="newBrandToggle = !newBrandToggle">+</button>
+      <button (click)="newBrandToggle = !newBrandToggle">+</button>
     </div>
-    <mat-form-field class="brand" appearance="fill" *ngIf="newBrandToggle" >
+    <mat-form-field class="brand" appearance="fill" *ngIf="newBrandToggle">
       <mat-label>Brand</mat-label>
       <input matInput formControlName="brand" />
     </mat-form-field>
-  </div>
 
-  <div class="section">
+    <!-- model -->
 
-    <div class="individualFields"*ngIf="!newModelToggle">
+    <div class="individualFields" *ngIf="!newModelToggle">
       <mat-form-field appearance="fill">
         <mat-label>Machine Model</mat-label>
         <mat-select formControlName="model">
@@ -59,15 +58,15 @@
           </mat-option>
         </mat-select>
       </mat-form-field>
-      <button mat-mini-fab (click)="newModelToggle = !newModelToggle">+</button>
+      <button (click)="newModelToggle = !newModelToggle">+</button>
     </div>
-    <mat-form-field class="mediaUrl" appearance="fill" *ngIf="newModelToggle" >
+    <mat-form-field class="model" appearance="fill" *ngIf="newModelToggle">
       <mat-label>Model</mat-label>
       <input matInput formControlName="model" />
     </mat-form-field>
   </div>
 
-
+  <!-- Media type -->
   <div class="section">
     <mat-form-field appearance="fill">
       <mat-label>Media Type</mat-label>
@@ -77,25 +76,27 @@
       </mat-select>
     </mat-form-field>
 
+    <!-- media Title -->
     <mat-form-field class="mediaTitle" appearance="fill">
       <mat-label>Media Title</mat-label>
       <input matInput formControlName="mediaTitle" />
     </mat-form-field>
 
+    <!-- media URL -->
     <mat-form-field class="mediaUrl" appearance="fill">
       <mat-label>Media URL</mat-label>
       <input matInput formControlName="mediaUrl" />
     </mat-form-field>
   </div>
 
+  <!-- Media Description   -->
   <div class="section">
     <mat-form-field class="mediaDescription" appearance="fill">
       <mat-label>Media Description</mat-label>
       <textarea matInput formControlName="mediaDescription"></textarea>
     </mat-form-field>
-  </div>
-
-  <div class="section">
-    <button mat-raised-button type="submit">Submit</button>
+    <button class="submit" mat-raised-button type="submit" name="submit">
+      Submit
+    </button>
   </div>
 </form>

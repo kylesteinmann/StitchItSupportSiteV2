@@ -14,16 +14,17 @@ mat-form-field {
   flex-wrap: wrap;
 }
 textarea{
-  height:50px;
+  height:75px;
 }
 .section{
   display:flex;
   flex-direction: row;
   flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
 }
 button {
   margin:0px;
-
   font-weight: 550;
   font-size: large;
   background-color: #d21919;
@@ -37,7 +38,8 @@ button {
   justify-content: center;
   align-items: center;
 }
-fieldset {
-  border:solid #d21919 1px
+
+.submit {
+  margin:0 0 0 40px;
 
 }

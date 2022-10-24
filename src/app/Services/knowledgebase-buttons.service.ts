@@ -9,16 +9,11 @@ import { MediaData } from '../Models/media-data';
 export class KnowledgebaseButtonsService implements OnInit{
   constructor(private http: HttpClient) {
   }
-  ngOnInit(): void {
-   this.fetchMedia()
+  ngOnInit() {
+
   }
 
-  machineTypeButton:MediaData[] = [
-    {type:"Embroidery Machine", brand:"SWF", model:"A series", mediaType:"Document",media:"www.google.com", mediaDescription:"This is a test to see if this app will function correctly!", mediaName:"Test"},
-    {type:"White Toner Printer", brand:"Crio", model:"9541", mediaType:"Video", media:"www.google.com", mediaDescription:"This is a test to see if this app will function correctly!", mediaName:"Test"}
-
-
-  ];
+  machineTypeButton:MediaData[] = [];
   newMedia = {};
   typeClicked: Boolean = true;
   brandClicked: Boolean = false;
