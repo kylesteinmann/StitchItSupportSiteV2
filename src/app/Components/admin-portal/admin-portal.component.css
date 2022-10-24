@@ -1,0 +1,43 @@
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+mat-form-field {
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  margin:10px;
+  flex-wrap: wrap;
+}
+textarea{
+  height:50px;
+}
+.section{
+  display:flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+button {
+  margin:0px;
+
+  font-weight: 550;
+  font-size: large;
+  background-color: #d21919;
+  color: white;
+  border: none;
+  border-radius: 5px;
+}
+
+.individualFields{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+fieldset {
+  border:solid #d21919 1px
+
+}

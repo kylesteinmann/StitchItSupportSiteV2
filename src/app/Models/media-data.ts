@@ -4,6 +4,7 @@ export interface MediaData {
   brand: string;
   model: string;
   media: string;
+  mediaType:string;
   mediaName: string;
   mediaDescription: string;
 

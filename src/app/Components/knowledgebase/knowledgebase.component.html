@@ -29,25 +29,25 @@
     </button>
   </div>
 
+  <div class="buttonContainer" *ngIf="knowledgebaseButtonsService.modelClicked">
+    <button
+      *ngFor="let button of knowledgebaseButtonsService.uniqueModel"
+      #buttonSelected
+      (click)="
+        knowledgebaseButtonsService.modelSelected = buttonSelected.textContent;
+        knowledgebaseButtonsService.uniqueMediaCards()
+      "
+    >
+      {{ button.model }}
+    </button>
+  </div>
 
-<div class="buttonContainer" *ngIf="knowledgebaseButtonsService.modelClicked">
-  <button
-    *ngFor="let button of knowledgebaseButtonsService.uniqueModel"
-    #buttonSelected
-    (click)="
-      knowledgebaseButtonsService.modelSelected = buttonSelected.textContent;
-      knowledgebaseButtonsService.uniqueMediaCards()
-    "
-  >
-    {{ button.model }}
-  </button>
-</div>
-
-<div class="mediaContainer" *ngIf="knowledgebaseButtonsService.mediaClicked">
-  <mat-card *ngFor="let item of knowledgebaseButtonsService.uniqueMedia">
-    <a [href]="item.media">
-      <mat-card-title>{{ item.mediaName }}</mat-card-title>
-      <mat-card-content>{{ item.mediaDescription }}</mat-card-content></a>
-  </mat-card>
-</div>
+  <div class="mediaContainer" *ngIf="knowledgebaseButtonsService.mediaClicked">
+    <mat-card *ngFor="let item of knowledgebaseButtonsService.uniqueMedia">
+      <a [href]="item.media">
+        <mat-card-title>{{ item.mediaName }}</mat-card-title>
+        <mat-card-content>{{ item.mediaDescription }}</mat-card-content></a
+      >
+    </mat-card>
+  </div>
 </div>

@@ -1,7 +1,7 @@
 .toolbar {
   display: flex;
   justify-content: space-between;
-  display: flex;
+  flex-wrap:wrap;
   align-items: center;
   background-color: #d21919;
   color: white;
@@ -31,3 +31,4 @@ button {
   justify-content: flex-end;
   flex-wrap: wrap;
 }
+

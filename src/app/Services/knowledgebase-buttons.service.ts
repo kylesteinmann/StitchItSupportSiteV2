@@ -1,18 +1,21 @@
 import { HttpBackend, HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
+import { Injectable, OnInit } from '@angular/core';
 import { map } from 'rxjs';
 import { MediaData } from '../Models/media-data';
 
 @Injectable({
   providedIn: 'root',
 })
-export class KnowledgebaseButtonsService {
+export class KnowledgebaseButtonsService implements OnInit{
   constructor(private http: HttpClient) {
+  }
+  ngOnInit(): void {
+   this.fetchMedia()
   }
 
   machineTypeButton:MediaData[] = [
-    {type:"Embroidery Machine", brand:"SWF", model:"A series", media:"www.google.com", mediaDescription:"This is a test to see if this app will function correctly!", mediaName:"Test"},
-    {type:"White Toner Printer", brand:"Crio", model:"9541", media:"www.google.com", mediaDescription:"This is a test to see if this app will function correctly!", mediaName:"Test"}
+    {type:"Embroidery Machine", brand:"SWF", model:"A series", mediaType:"Document",media:"www.google.com", mediaDescription:"This is a test to see if this app will function correctly!", mediaName:"Test"},
+    {type:"White Toner Printer", brand:"Crio", model:"9541", mediaType:"Video", media:"www.google.com", mediaDescription:"This is a test to see if this app will function correctly!", mediaName:"Test"}
 
 
   ];
@@ -40,6 +43,7 @@ export class KnowledgebaseButtonsService {
       return false;
     });
     return unique;
+
   }
 
   uniqueBrandButtons() {
@@ -103,21 +107,11 @@ export class KnowledgebaseButtonsService {
     this.uniqueMedia = [];
   }
 
-  addMedia(newMedia) {
-    this.http
-      .post<{name:string}>(
-        'https://console.firebase.google.com/project/stitch-it-support-site/database/stitch-it-support-site-default-rtdb/data/~2F/media.json',
-        newMedia
-      )
-      .subscribe((responseData) => {
-        console.log(newMedia);
-      });
-  }
 
-  private fetchMedia() {
+
+  public fetchMedia() {
     this.http
-      .get<{[key: string] : MediaData}>(
-        'https://console.firebase.google.com/project/stitch-it-support-site/database/stitch-it-support-site-default-rtdb/data/~2F/media.json'
+      .get<{[key: string] : MediaData}>('https://stitch-it-support-site-default-rtdb.firebaseio.com/media.json'
       )
       .pipe(
         map((responseData) => {

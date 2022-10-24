@@ -8,8 +8,9 @@
     />
   </div>
   <div class="headerButtons">
-    <button class="startTicket" mat-flat-button routerLink="/supportForm">Start a Support Ticket</button>
-    <button class="trainingRegistration" mat-flat-button routerLink="/training">Register for Training</button>
+    <button class="startTicket" mat-raised-button routerLink="/supportForm">Start a Support Ticket</button>
+    <button class="trainingRegistration" mat-raised-button routerLink="/training">Register for Training</button>
+    <button class="adminPortal" mat-raised-button (click)="knowledgebaseButtonsService.fetchMedia()" routerLink="/adminPortal">Admin Portal</button>
   </div>
 </div>
 <router-outlet></router-outlet>

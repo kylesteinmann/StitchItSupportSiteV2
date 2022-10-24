@@ -5,7 +5,11 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { FormsModule } from '@angular/forms';
 import {MatCardModule} from '@angular/material/card';
-import {HttpClientModule} from '@angular/common/http'
+import {HttpClientModule} from '@angular/common/http';
+import {MatSelectModule} from '@angular/material/select';
+import {MatInputModule} from '@angular/material/input';
+import { ReactiveFormsModule } from '@angular/forms';
+
 
 
 import { AppComponent } from './app.component';
@@ -36,7 +40,10 @@ import { AdminPortalComponent } from './Components/admin-portal/admin-portal.com
     MatButtonModule,
     FormsModule,
     MatCardModule,
-    HttpClientModule
+    HttpClientModule,
+    MatSelectModule,
+    MatInputModule,
+    ReactiveFormsModule
 
 
   ],
