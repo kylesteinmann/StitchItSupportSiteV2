@@ -25,5 +25,7 @@ newModelToggle = false
       'mediaDescription': new FormControl(null)
     })
   }
-
+resetForm(){
+  this.addMediaForm.reset(this.addMediaForm.value);
+}
 }
