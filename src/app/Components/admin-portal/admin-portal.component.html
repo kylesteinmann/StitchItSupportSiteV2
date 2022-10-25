@@ -2,7 +2,6 @@
   [formGroup]="addMediaForm"
   (ngSubmit)="adminPortal.addMedia(addMediaForm.value)"
 >
-  <!-- type -->
   <div class="section">
     <div class="individualFields" *ngIf="!newTypeToggle">
       <mat-form-field appearance="fill">
@@ -23,8 +22,6 @@
       <input matInput formControlName="type" />
     </mat-form-field>
 
-    <!-- brand -->
-
     <div class="individualFields" *ngIf="!newBrandToggle">
       <mat-form-field appearance="fill">
         <mat-label>Machine Brand</mat-label>
@@ -43,8 +40,6 @@
       <mat-label>Brand</mat-label>
       <input matInput formControlName="brand" />
     </mat-form-field>
-
-    <!-- model -->
 
     <div class="individualFields" *ngIf="!newModelToggle">
       <mat-form-field appearance="fill">
@@ -66,7 +61,6 @@
     </mat-form-field>
   </div>
 
-  <!-- Media type -->
   <div class="section">
     <mat-form-field appearance="fill">
       <mat-label>Media Type</mat-label>
@@ -76,27 +70,22 @@
       </mat-select>
     </mat-form-field>
 
-    <!-- media Title -->
     <mat-form-field class="mediaTitle" appearance="fill">
       <mat-label>Media Title</mat-label>
       <input matInput formControlName="mediaTitle" />
     </mat-form-field>
 
-    <!-- media URL -->
     <mat-form-field class="mediaUrl" appearance="fill">
       <mat-label>Media URL</mat-label>
       <input matInput formControlName="mediaUrl" />
     </mat-form-field>
   </div>
 
-  <!-- Media Description   -->
   <div class="section">
     <mat-form-field class="mediaDescription" appearance="fill">
       <mat-label>Media Description</mat-label>
       <textarea matInput formControlName="mediaDescription"></textarea>
     </mat-form-field>
-    <button  class="submit" mat-raised-button type="submit">
-      Submit
-    </button>
+    <button class="submit" mat-raised-button type="submit">Submit</button>
   </div>
 </form>

@@ -20,6 +20,7 @@ import { SubmitSuccessComponent } from './Components/submit-success/submit-succe
 import { TrainingComponent } from './Components/training/training.component';
 import { KnowledgebaseComponent } from './Components/knowledgebase/knowledgebase.component';
 import { AdminPortalComponent } from './Components/admin-portal/admin-portal.component';
+import { AuthComponent } from './Components/auth/auth.component';
 
 
 
@@ -31,7 +32,8 @@ import { AdminPortalComponent } from './Components/admin-portal/admin-portal.com
     SubmitSuccessComponent,
     TrainingComponent,
     KnowledgebaseComponent,
-    AdminPortalComponent
+    AdminPortalComponent,
+    AuthComponent
 
   ],
   imports: [
