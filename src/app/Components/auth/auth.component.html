@@ -1,7 +1,7 @@
 <div class="formContainer">
   <form #authForm="ngForm" (ngSubmit)="onSubmit(authForm)">
     <label for="username">Username:</label>
-    <input type="text" id="email" name="username" ngModel required email>
+    <input type="text" id="email" name="email" ngModel required email>
     <input type="passwprd" id="password" name="password" ngModel required >
     <button type="submit" [disabled]="!authForm.valid">Log In</button>
   </form>

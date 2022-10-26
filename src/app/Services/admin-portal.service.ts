@@ -1,19 +1,30 @@
 import { Injectable, OnInit } from '@angular/core';
-
+import { FormControl, FormGroup } from '@angular/forms';
 import { KnowledgebaseButtonsService } from './knowledgebase-buttons.service';
-import { HttpClient } from '@angular/common/http';
+import { HttpBackend, HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root',
 })
 export class AdminPortalService implements OnInit {
-  constructor(private knowledgebaseButtonsService: KnowledgebaseButtonsService, private http: HttpClient
-  ) { }
+  constructor(private http: HttpClient,
+    private knowledgebaseButtonsService: KnowledgebaseButtonsService
+  ) {}
 
+  ngOnInit(): void {
+    this.addMediaForm=new FormGroup({
+      'type':new FormControl(null),
+      'brand':new FormControl(null),
+      'model':new FormControl(null),
+      'mediaType':new FormControl(null),
+      'mediaURL':new FormControl(null),
+      'MediaTitle':new FormControl(null),
+      'MediaDescription':new FormControl(null)
 
-  ngOnInit() {
-
+    })
   }
+
+  addMediaForm:FormGroup
 
   types() {
     const uniqueIds = [];
@@ -60,22 +71,18 @@ export class AdminPortalService implements OnInit {
     return unique;
   }
 
-  addMedia(newMedia: {
-    type: string;
+  addMedia(newMedia: {type: string;
     brand: string;
     model: string;
     media: string;
-    mediaType: string;
+    mediaType:string;
     mediaName: string;
-    mediaDescription: string;
-  }
-  ) {
+    mediaDescription: string;}) {
     this.http
       .post(
         'https://stitch-it-support-site-default-rtdb.firebaseio.com/media.json',
-        newMedia).subscribe();
-
-
+        newMedia
+      ).subscribe();
   }
 
 }
