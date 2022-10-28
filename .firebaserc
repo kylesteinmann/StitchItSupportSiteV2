@@ -1,4 +1,8 @@
 {
+  "projects": {
+    "default": "stitch-it-support-site",
+    " --help": "stitch-it-support-site"
+  },
   "targets": {
     "stitch-it-support-site": {
       "hosting": {
@@ -8,7 +12,5 @@
       }
     }
   },
-  "projects": {
-    "default": "stitch-it-support-site"
-  }
+  "etags": {}
 }

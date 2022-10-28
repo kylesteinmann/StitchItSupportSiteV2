@@ -1,4 +1,4 @@
-import { Subject, tap } from 'rxjs';
+import { BehaviorSubject, tap } from 'rxjs';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { User } from '../Models/user.model';
@@ -18,8 +18,9 @@ interface AuthReponseData {
   providedIn: 'root',
 })
 export class AuthService {
-  user = new Subject<User>();
+  user = new BehaviorSubject<User>(null);
   isAuthenticated = false
+
   constructor(private http: HttpClient, private router:Router) {}
 
   login(email: string, password: string) {
@@ -40,6 +41,7 @@ export class AuthService {
             expirationDate
           );
           this.user.next(user);
+
 
         })
       );

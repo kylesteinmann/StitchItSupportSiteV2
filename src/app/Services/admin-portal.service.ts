@@ -1,14 +1,16 @@
 import { Injectable, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { KnowledgebaseButtonsService } from './knowledgebase-buttons.service';
-import { HttpBackend, HttpClient } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
+import { AuthService } from './auth.service';
+import { exhaustMap, take } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
 })
 export class AdminPortalService implements OnInit {
   constructor(private http: HttpClient,
-    private knowledgebaseButtonsService: KnowledgebaseButtonsService
+    private knowledgebaseButtonsService: KnowledgebaseButtonsService, private authService:AuthService
   ) {}
 
   ngOnInit(): void {
@@ -78,11 +80,17 @@ export class AdminPortalService implements OnInit {
     mediaType:string;
     mediaName: string;
     mediaDescription: string;}) {
-    this.http
+    this.authService.user.pipe(take(1), exhaustMap( user => {
+      console.log(user)
+      return this.http
       .post(
-        'https://stitch-it-support-site-default-rtdb.firebaseio.com/media.json',
+        'https://stitch-it-support-site-default-rtdb.firebaseio.com/media.json?auth=' + user.token,
         newMedia
-      ).subscribe();
+      )
+    })).subscribe()
+
+
+
   }
 
 }
