@@ -28,7 +28,6 @@ export class TicketService {
       description: form.value.description,
     };
     this.ticketSubmitted.success = 'true';
-    console.log(this.ticket);
     this.router.navigateByUrl('/submitSuccess');
     setTimeout(() => this.router.navigateByUrl(''), 4000);
     setTimeout(() => (this.ticketSubmitted.success = 'false'), 4000);

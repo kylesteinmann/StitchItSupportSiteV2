@@ -10,7 +10,7 @@ export class KnowledgebaseComponent implements OnInit {
 
 
 
-  constructor(public knowledgebaseButtonsService:KnowledgebaseButtonsService) { }
+  constructor(public knowledgebaseButtonsService:KnowledgebaseButtonsService ) { }
 
   ngOnInit(): void {
     this.knowledgebaseButtonsService.fetchMedia()

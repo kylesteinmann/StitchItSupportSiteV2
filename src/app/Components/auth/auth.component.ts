@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { AuthService } from 'src/app/Services/auth.service';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-auth',
@@ -8,7 +10,7 @@ import { AuthService } from 'src/app/Services/auth.service';
   styleUrls: ['./auth.component.css'],
 })
 export class AuthComponent {
-  constructor(private authService: AuthService) {}
+  constructor(private authService: AuthService, private router:Router, ) {}
 
   onSubmit(form: NgForm) {
     if (!form.valid) {
@@ -17,7 +19,9 @@ export class AuthComponent {
     const email = form.value.email;
     const password = form.value.password;
 
-    this.authService.login(email, password);
+    this.authService.login(email, password).subscribe()
+    this.router.navigate(['/adminPortal'])
     form.reset();
+
   }
 }

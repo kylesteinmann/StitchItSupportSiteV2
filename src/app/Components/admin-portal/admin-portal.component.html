@@ -1,6 +1,7 @@
 <form
   [formGroup]="addMediaForm"
   (ngSubmit)="adminPortal.addMedia(addMediaForm.value)"
+  *ngIf="authService.isAuthenticated"
 >
   <div class="section">
     <div class="individualFields" *ngIf="!newTypeToggle">
@@ -89,3 +90,7 @@
     <button class="submit" mat-raised-button type="submit">Submit</button>
   </div>
 </form>
+
+<div class="errorContainer">
+  <h1 *ngIf="!authService.isAuthenticated">Incorrect username or password!</h1>
+</div>

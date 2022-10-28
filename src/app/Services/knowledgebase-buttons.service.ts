@@ -64,8 +64,7 @@ export class KnowledgebaseButtonsService implements OnInit{
     const filteredTypeArray = this.machineTypeButton.filter(
       (filter) => filter.brand.trim() === this.brandSelected.trim()
     );
-    console.log(filteredTypeArray);
-    console.log(this.modelSelected);
+
     this.uniqueModel = filteredTypeArray.filter((element) => {
       const isDuplicate = this.uniqueModel.includes(element.model);
       if (!isDuplicate) {
@@ -85,7 +84,7 @@ export class KnowledgebaseButtonsService implements OnInit{
     this.modelClicked = !this.modelClicked;
     this.mediaClicked = !this.mediaClicked;
 
-    console.log(this.uniqueModel);
+
   }
 
   startOver() {
