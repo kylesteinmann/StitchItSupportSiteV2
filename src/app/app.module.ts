@@ -4,14 +4,12 @@ import { MatButtonModule } from '@angular/material/button';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { FormsModule } from '@angular/forms';
-import {MatCardModule} from '@angular/material/card';
-import {HttpClientModule} from '@angular/common/http';
-import {MatSelectModule} from '@angular/material/select';
-import {MatInputModule} from '@angular/material/input';
+import { MatCardModule } from '@angular/material/card';
+import { HttpClientModule } from '@angular/common/http';
+import { MatSelectModule } from '@angular/material/select';
+import { MatInputModule } from '@angular/material/input';
 import { ReactiveFormsModule } from '@angular/forms';
-import {MatFormFieldModule} from '@angular/material/form-field';
-
-
+import { MatFormFieldModule } from '@angular/material/form-field';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './Components/header/header.component';
@@ -22,8 +20,6 @@ import { KnowledgebaseComponent } from './Components/knowledgebase/knowledgebase
 import { AdminPortalComponent } from './Components/admin-portal/admin-portal.component';
 import { AuthComponent } from './Components/auth/auth.component';
 
-
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -33,8 +29,7 @@ import { AuthComponent } from './Components/auth/auth.component';
     TrainingComponent,
     KnowledgebaseComponent,
     AdminPortalComponent,
-    AuthComponent
-
+    AuthComponent,
   ],
   imports: [
     BrowserModule,
@@ -47,11 +42,9 @@ import { AuthComponent } from './Components/auth/auth.component';
     MatSelectModule,
     MatInputModule,
     ReactiveFormsModule,
-    MatFormFieldModule
-
-
+    MatFormFieldModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

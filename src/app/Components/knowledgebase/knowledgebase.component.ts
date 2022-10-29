@@ -4,16 +4,14 @@ import { KnowledgebaseButtonsService } from 'src/app/Services/knowledgebase-butt
 @Component({
   selector: 'app-knowledgebase',
   templateUrl: './knowledgebase.component.html',
-  styleUrls: ['./knowledgebase.component.css']
+  styleUrls: ['./knowledgebase.component.css'],
 })
 export class KnowledgebaseComponent implements OnInit {
-
-
-
-  constructor(public knowledgebaseButtonsService:KnowledgebaseButtonsService ) { }
+  constructor(
+    public knowledgebaseButtonsService: KnowledgebaseButtonsService
+  ) {}
 
   ngOnInit(): void {
-    this.knowledgebaseButtonsService.fetchMedia()
+    this.knowledgebaseButtonsService.fetchMedia();
   }
-
 }

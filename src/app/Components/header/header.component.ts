@@ -4,13 +4,12 @@ import { KnowledgebaseButtonsService } from 'src/app/Services/knowledgebase-butt
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
-  styleUrls: ['./header.component.css']
+  styleUrls: ['./header.component.css'],
 })
 export class HeaderComponent implements OnInit {
+  constructor(
+    public knowledgebaseButtonsService: KnowledgebaseButtonsService
+  ) {}
 
-  constructor(public knowledgebaseButtonsService: KnowledgebaseButtonsService) { }
-
-  ngOnInit(): void {
-  }
-
+  ngOnInit(): void {}
 }

@@ -19,8 +19,8 @@ interface AuthReponseData {
 })
 export class AuthService {
   user = new Subject<User>();
-  isAuthenticated = false
-  constructor(private http: HttpClient, private router:Router) {}
+  isAuthenticated = false;
+  constructor(private http: HttpClient, private router: Router) {}
 
   login(email: string, password: string) {
     return this.http
@@ -40,7 +40,6 @@ export class AuthService {
             expirationDate
           );
           this.user.next(user);
-
         })
       );
   }

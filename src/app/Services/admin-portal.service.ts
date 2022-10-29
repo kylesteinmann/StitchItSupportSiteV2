@@ -7,24 +7,24 @@ import { HttpBackend, HttpClient } from '@angular/common/http';
   providedIn: 'root',
 })
 export class AdminPortalService implements OnInit {
-  constructor(private http: HttpClient,
+  constructor(
+    private http: HttpClient,
     private knowledgebaseButtonsService: KnowledgebaseButtonsService
   ) {}
 
   ngOnInit(): void {
-    this.addMediaForm=new FormGroup({
-      'type':new FormControl(null),
-      'brand':new FormControl(null),
-      'model':new FormControl(null),
-      'mediaType':new FormControl(null),
-      'mediaURL':new FormControl(null),
-      'MediaTitle':new FormControl(null),
-      'MediaDescription':new FormControl(null)
-
-    })
+    this.addMediaForm = new FormGroup({
+      type: new FormControl(null),
+      brand: new FormControl(null),
+      model: new FormControl(null),
+      mediaType: new FormControl(null),
+      mediaURL: new FormControl(null),
+      MediaTitle: new FormControl(null),
+      MediaDescription: new FormControl(null),
+    });
   }
 
-  addMediaForm:FormGroup
+  addMediaForm: FormGroup;
 
   types() {
     const uniqueIds = [];
@@ -71,18 +71,20 @@ export class AdminPortalService implements OnInit {
     return unique;
   }
 
-  addMedia(newMedia: {type: string;
+  addMedia(newMedia: {
+    type: string;
     brand: string;
     model: string;
     media: string;
-    mediaType:string;
+    mediaType: string;
     mediaName: string;
-    mediaDescription: string;}) {
+    mediaDescription: string;
+  }) {
     this.http
       .post(
         'https://stitch-it-support-site-default-rtdb.firebaseio.com/media.json',
         newMedia
-      ).subscribe();
+      )
+      .subscribe();
   }
-
 }

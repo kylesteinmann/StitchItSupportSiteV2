@@ -6,14 +6,11 @@ import { MediaData } from '../Models/media-data';
 @Injectable({
   providedIn: 'root',
 })
-export class KnowledgebaseButtonsService implements OnInit{
-  constructor(private http: HttpClient) {
-  }
-  ngOnInit() {
+export class KnowledgebaseButtonsService implements OnInit {
+  constructor(private http: HttpClient) {}
+  ngOnInit() {}
 
-  }
-
-  machineTypeButton:MediaData[] = [];
+  machineTypeButton: MediaData[] = [];
   newMedia = {};
   typeClicked: Boolean = true;
   brandClicked: Boolean = false;
@@ -38,7 +35,6 @@ export class KnowledgebaseButtonsService implements OnInit{
       return false;
     });
     return unique;
-
   }
 
   uniqueBrandButtons() {
@@ -83,8 +79,6 @@ export class KnowledgebaseButtonsService implements OnInit{
     );
     this.modelClicked = !this.modelClicked;
     this.mediaClicked = !this.mediaClicked;
-
-
   }
 
   startOver() {
@@ -101,15 +95,14 @@ export class KnowledgebaseButtonsService implements OnInit{
     this.uniqueMedia = [];
   }
 
-
-
   public fetchMedia() {
     this.http
-      .get<{[key: string] : MediaData}>('https://stitch-it-support-site-default-rtdb.firebaseio.com/media.json'
+      .get<{ [key: string]: MediaData }>(
+        'https://stitch-it-support-site-default-rtdb.firebaseio.com/media.json'
       )
       .pipe(
         map((responseData) => {
-          const mediaArray:MediaData[] = [];
+          const mediaArray: MediaData[] = [];
           for (const key in responseData) {
             if (responseData.hasOwnProperty(key)) {
               mediaArray.push({ ...responseData[key], id: key });
@@ -119,7 +112,7 @@ export class KnowledgebaseButtonsService implements OnInit{
         })
       )
       .subscribe((media) => {
-        this.machineTypeButton = media
+        this.machineTypeButton = media;
       });
   }
 }

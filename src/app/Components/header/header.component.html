@@ -1,16 +1,32 @@
 <div class="toolbar">
-  <div class="logoTextContainer" >
+  <div class="logoTextContainer">
     <img
       width="175px"
       (click)="knowledgebaseButtonsService.startOver()"
       routerLink=""
-      src="/assets/StitchItLogo-allWhite.png" alt="image"
+      src="/assets/StitchItLogo-allWhite.png"
+      alt="image"
     />
   </div>
   <div class="headerButtons">
-    <button class="startTicket" mat-raised-button routerLink="/supportForm">Start a Support Ticket</button>
-    <button class="trainingRegistration" mat-raised-button routerLink="/training">Register for Training</button>
-    <button class="adminPortal" mat-raised-button (click)="knowledgebaseButtonsService.fetchMedia()" routerLink="/auth">Admin Portal</button>
+    <button class="startTicket" mat-raised-button routerLink="/supportForm">
+      Start a Support Ticket
+    </button>
+    <button
+      class="trainingRegistration"
+      mat-raised-button
+      routerLink="/training"
+    >
+      Register for Training
+    </button>
+    <button
+      class="adminPortal"
+      mat-raised-button
+      (click)="knowledgebaseButtonsService.fetchMedia()"
+      routerLink="/auth"
+    >
+      Admin Portal
+    </button>
   </div>
 </div>
 <router-outlet></router-outlet>
