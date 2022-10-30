@@ -85,27 +85,15 @@ export class AdminPortalService implements OnInit {
     media: string;
     mediaType: string;
     mediaName: string;
-<<<<<<< HEAD
     mediaDescription: string;}) {
     this.authService.user.pipe(take(1), exhaustMap( user => {
       console.log(user)
       return this.http
-=======
-    mediaDescription: string;
-  }) {
-    this.http
->>>>>>> f7758d452a63749824faf80e06289e3bba92a688
       .post(
         'https://stitch-it-support-site-default-rtdb.firebaseio.com/media.json?auth=' + user.token,
         newMedia
       )
-<<<<<<< HEAD
     })).subscribe()
 
-
-
-=======
-      .subscribe();
->>>>>>> f7758d452a63749824faf80e06289e3bba92a688
   }
 }
