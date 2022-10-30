@@ -7,24 +7,24 @@ form {
   margin-top: 20px;
 }
 mat-form-field {
-  display:flex;
+  display: flex;
   justify-content: center;
   align-items: center;
-  margin:10px;
+  margin: 10px;
   flex-wrap: wrap;
 }
-textarea{
-  height:75px;
+textarea {
+  height: 75px;
 }
-.section{
-  display:flex;
+.section {
+  display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
 }
 button {
-  margin:0px;
+  margin: 0px;
   font-weight: 550;
   font-size: large;
   background-color: #d21919;
@@ -33,15 +33,14 @@ button {
   border-radius: 5px;
 }
 
-.individualFields{
+.individualFields {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 .submit {
-  margin:0 0 0 40px;
-
+  margin: 0 0 0 40px;
 }
 
 .errorContainer {

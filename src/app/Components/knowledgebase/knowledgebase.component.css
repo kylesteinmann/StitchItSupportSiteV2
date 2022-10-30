@@ -4,21 +4,21 @@
   align-items: center;
   flex-direction: column;
   margin: 40px 0 0 0;
-  flex-wrap:wrap;
+  flex-wrap: wrap;
 }
-h1{
+h1 {
   display: flex;
-  color:black;
+  color: black;
   font-size: 25px;
   font-weight: 500;
   padding: 10px;
-  margin:0;
+  margin: 0;
   justify-content: center;
 }
 
 button {
-  margin:20px;
-  padding:10px 20px;
+  margin: 20px;
+  padding: 10px 20px;
   font-weight: 550;
   font-size: large;
   background-color: #d21919;
@@ -28,31 +28,31 @@ button {
 }
 
 mat-card {
-  color:white;
-  max-width:250px;
-  min-width:175px;
-  margin:20px;
-  background-color:#d21919
+  color: white;
+  max-width: 250px;
+  min-width: 175px;
+  margin: 20px;
+  background-color: #d21919;
 }
 .mediaContainer {
   display: flex;
   justify-content: center;
-
 }
 a {
   text-decoration: none;
   color: white;
 }
-.mediaContainer, .buttonContainer {
+.mediaContainer,
+.buttonContainer {
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-wrap:wrap;
-  width:75%;
+  flex-wrap: wrap;
+  width: 75%;
 }
 
-mat-card-content{
-  padding:0;
+mat-card-content {
+  padding: 0;
   margin: 0;
 }
 

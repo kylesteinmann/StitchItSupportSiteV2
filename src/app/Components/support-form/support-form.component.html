@@ -1,8 +1,10 @@
-<form (ngSubmit)="ticketService.onSubmitForm(f)" #f="ngForm" *ngIf="ticketService.ticketSubmitted.success === 'false'">
-  <fieldset >
-   <span
-      >*Please fill in all required information to submit.</span
-    >
+<form
+  (ngSubmit)="ticketService.onSubmitForm(f)"
+  #f="ngForm"
+  *ngIf="ticketService.ticketSubmitted.success === 'false'"
+>
+  <fieldset>
+    <span>*Please fill in all required information to submit.</span>
     <div class="group">
       <div>
         <label for="fullName">*Full Name:</label>
@@ -63,11 +65,10 @@
       </div>
     </div>
     <button mat-flat-button type="submit" [disabled]="!f.valid">Submit</button>
-
   </fieldset>
 </form>
 <div class="messageContainer">
-<app-submit-success
-      *ngIf="ticketService.ticketSubmitted.success === 'true'"
-    ></app-submit-success></div>
-
+  <app-submit-success
+    *ngIf="ticketService.ticketSubmitted.success === 'true'"
+  ></app-submit-success>
+</div>

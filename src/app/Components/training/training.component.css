@@ -1,35 +1,34 @@
 .container {
-  display:flex;
+  display: flex;
 
   justify-content: flex-end;
+}
 
-  }
+.buttonsContainer {
+  display: flex;
+  flex-direction: row;
+  border: none;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  background-color: #d21919;
+  width: 600px;
+  padding: 10px;
+}
 
-  .buttonsContainer{
-    display: flex;
-    flex-direction: row;
-    border: none;
-    border-bottom-left-radius: 5px;
-    border-bottom-right-radius: 5px;
-    background-color: #d21919;
-    width: 600px;
-    padding:10px;
-  }
-
-  button {
-    margin: 5px;
-    margin: 0 10px 0 10px;
-    font-weight: 600;
-    font-size: large;
-    background-color: white;
-    border: none;
-    width: 500px;
-  }
-  a {
-    color: #d21919;
-    text-decoration: none;
-  }
-  span{
-    color:white;
-    font-size: 30px;
-  }
+button {
+  margin: 5px;
+  margin: 0 10px 0 10px;
+  font-weight: 600;
+  font-size: large;
+  background-color: white;
+  border: none;
+  width: 500px;
+}
+a {
+  color: #d21919;
+  text-decoration: none;
+}
+span {
+  color: white;
+  font-size: 30px;
+}

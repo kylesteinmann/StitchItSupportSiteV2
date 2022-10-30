@@ -24,22 +24,26 @@ button {
   margin-right: 10px;
   font-weight: 600;
   font-size: large;
-  color:#d21919;
+  color: #d21919;
   background-color: white;
   border: none;
   border-radius: 5px;
-  padding:5px 10px;
+  padding: 5px 10px;
 }
 
-input{
+input {
   border-radius: 3px;
   background-color: white;
   height: 25px;
   border-radius: 5px;
+<<<<<<< HEAD
+=======
+  border: none;
+>>>>>>> f7758d452a63749824faf80e06289e3bba92a688
 }
-.group{
+.group {
   display: flex;
-  margin:10px 0 0 0;
+  margin: 10px 0 0 0;
   justify-content: center;
   align-items: center;
 }

@@ -9,24 +9,29 @@ import { exhaustMap, take } from 'rxjs';
   providedIn: 'root',
 })
 export class AdminPortalService implements OnInit {
+<<<<<<< HEAD
   constructor(private http: HttpClient,
     private knowledgebaseButtonsService: KnowledgebaseButtonsService, private authService:AuthService
+=======
+  constructor(
+    private http: HttpClient,
+    private knowledgebaseButtonsService: KnowledgebaseButtonsService
+>>>>>>> f7758d452a63749824faf80e06289e3bba92a688
   ) {}
 
   ngOnInit(): void {
-    this.addMediaForm=new FormGroup({
-      'type':new FormControl(null),
-      'brand':new FormControl(null),
-      'model':new FormControl(null),
-      'mediaType':new FormControl(null),
-      'mediaURL':new FormControl(null),
-      'MediaTitle':new FormControl(null),
-      'MediaDescription':new FormControl(null)
-
-    })
+    this.addMediaForm = new FormGroup({
+      type: new FormControl(null),
+      brand: new FormControl(null),
+      model: new FormControl(null),
+      mediaType: new FormControl(null),
+      mediaURL: new FormControl(null),
+      MediaTitle: new FormControl(null),
+      MediaDescription: new FormControl(null),
+    });
   }
 
-  addMediaForm:FormGroup
+  addMediaForm: FormGroup;
 
   types() {
     const uniqueIds = [];
@@ -73,24 +78,34 @@ export class AdminPortalService implements OnInit {
     return unique;
   }
 
-  addMedia(newMedia: {type: string;
+  addMedia(newMedia: {
+    type: string;
     brand: string;
     model: string;
     media: string;
-    mediaType:string;
+    mediaType: string;
     mediaName: string;
+<<<<<<< HEAD
     mediaDescription: string;}) {
     this.authService.user.pipe(take(1), exhaustMap( user => {
       console.log(user)
       return this.http
+=======
+    mediaDescription: string;
+  }) {
+    this.http
+>>>>>>> f7758d452a63749824faf80e06289e3bba92a688
       .post(
         'https://stitch-it-support-site-default-rtdb.firebaseio.com/media.json?auth=' + user.token,
         newMedia
       )
+<<<<<<< HEAD
     })).subscribe()
 
 
 
+=======
+      .subscribe();
+>>>>>>> f7758d452a63749824faf80e06289e3bba92a688
   }
-
 }

@@ -3,7 +3,7 @@ import { AdminPortalService } from 'src/app/Services/admin-portal.service';
 import { KnowledgebaseButtonsService } from 'src/app/Services/knowledgebase-buttons.service';
 import { FormControl, FormGroup } from '@angular/forms';
 import { AuthService } from 'src/app/Services/auth.service';
-import { Subscription} from 'rxjs'
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-admin-portal',
@@ -11,8 +11,7 @@ import { Subscription} from 'rxjs'
   styleUrls: ['./admin-portal.component.css'],
 })
 export class AdminPortalComponent implements OnInit, OnDestroy {
-private userSub: Subscription;
-
+  private userSub: Subscription;
 
   newTypeToggle = false;
   newBrandToggle = false;
@@ -37,8 +36,8 @@ private userSub: Subscription;
       mediaDescription: new FormControl(null),
     });
 
-   this.userSub = this.authService.user.subscribe(user =>
-    this.authService.isAuthenticated = !!user
+    this.userSub = this.authService.user.subscribe(
+      (user) => (this.authService.isAuthenticated = !!user)
     );
   }
 

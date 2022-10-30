@@ -9,23 +9,18 @@ import { KnowledgebaseButtonsService } from './Services/knowledgebase-buttons.se
 import { KnowledgebaseComponent } from './Components/knowledgebase/knowledgebase.component';
 import { AuthComponent } from './Components/auth/auth.component';
 
-
-
-
 const routes: Routes = [
-  {path: 'supportForm', component: SupportFormComponent},
-  {path: 'header', component: HeaderComponent},
-  {path:'successSubmit', component: SubmitSuccessComponent},
-  {path:'training', component:TrainingComponent},
-  {path: 'adminPortal', component:AdminPortalComponent},
-  {path:'', component:KnowledgebaseComponent},
-  {path: "auth", component:AuthComponent}
-
-
+  { path: 'supportForm', component: SupportFormComponent },
+  { path: 'header', component: HeaderComponent },
+  { path: 'successSubmit', component: SubmitSuccessComponent },
+  { path: 'training', component: TrainingComponent },
+  { path: 'adminPortal', component: AdminPortalComponent },
+  { path: '', component: KnowledgebaseComponent },
+  { path: 'auth', component: AuthComponent },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

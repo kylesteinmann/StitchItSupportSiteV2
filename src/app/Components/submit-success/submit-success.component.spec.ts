@@ -8,9 +8,8 @@ describe('SubmitSuccessComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ SubmitSuccessComponent ]
-    })
-    .compileComponents();
+      declarations: [SubmitSuccessComponent],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(SubmitSuccessComponent);
     component = fixture.componentInstance;

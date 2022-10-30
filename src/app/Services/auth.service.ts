@@ -18,10 +18,16 @@ interface AuthReponseData {
   providedIn: 'root',
 })
 export class AuthService {
+<<<<<<< HEAD
   user = new BehaviorSubject<User>(null);
   isAuthenticated = false
 
   constructor(private http: HttpClient, private router:Router) {}
+=======
+  user = new Subject<User>();
+  isAuthenticated = false;
+  constructor(private http: HttpClient, private router: Router) {}
+>>>>>>> f7758d452a63749824faf80e06289e3bba92a688
 
   login(email: string, password: string) {
     return this.http
@@ -41,8 +47,11 @@ export class AuthService {
             expirationDate
           );
           this.user.next(user);
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> f7758d452a63749824faf80e06289e3bba92a688
         })
       );
   }

@@ -7,12 +7,18 @@ import { MediaData } from '../Models/media-data';
   providedIn: 'root',
 })
 export class KnowledgebaseButtonsService implements OnInit {
+<<<<<<< HEAD
   constructor(private http: HttpClient) {
   }
   ngOnInit() {
 
   }
 
+=======
+  constructor(private http: HttpClient) {}
+  ngOnInit() {}
+
+>>>>>>> f7758d452a63749824faf80e06289e3bba92a688
   machineTypeButton: MediaData[] = [];
   newMedia = {};
   typeClicked: Boolean = true;
@@ -38,7 +44,6 @@ export class KnowledgebaseButtonsService implements OnInit {
       return false;
     });
     return unique;
-
   }
 
   uniqueBrandButtons() {
@@ -83,8 +88,6 @@ export class KnowledgebaseButtonsService implements OnInit {
     );
     this.modelClicked = !this.modelClicked;
     this.mediaClicked = !this.mediaClicked;
-
-
   }
 
   startOver() {
@@ -101,11 +104,14 @@ export class KnowledgebaseButtonsService implements OnInit {
     this.uniqueMedia = [];
   }
 
-
-
   public fetchMedia() {
     this.http
+<<<<<<< HEAD
       .get<{ [key: string]: MediaData }>('https://stitch-it-support-site-default-rtdb.firebaseio.com/media.json'
+=======
+      .get<{ [key: string]: MediaData }>(
+        'https://stitch-it-support-site-default-rtdb.firebaseio.com/media.json'
+>>>>>>> f7758d452a63749824faf80e06289e3bba92a688
       )
       .pipe(
         map((responseData) => {
@@ -119,7 +125,7 @@ export class KnowledgebaseButtonsService implements OnInit {
         })
       )
       .subscribe((media) => {
-        this.machineTypeButton = media
+        this.machineTypeButton = media;
       });
   }
 }

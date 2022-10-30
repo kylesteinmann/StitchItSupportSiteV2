@@ -1,4 +1,4 @@
-import { NgForm } from "@angular/forms";
+import { NgForm } from '@angular/forms';
 
 export class Ticket {
   public fullName: string;
@@ -6,15 +6,23 @@ export class Ticket {
   public phoneNumber: string;
   public email: string;
   public makeModel: string;
-  public description: string
+  public description: string;
 
-  constructor(fullName: string, companyName: string, phoneNumber: string, email: string, makeModel: string, description: string) {
-
-    {this.fullName = fullName;
-    this.companyName = companyName;
-    this.phoneNumber = phoneNumber;
-    this.email = email;
-    this.makeModel = makeModel;
-    this.description = description;}
+  constructor(
+    fullName: string,
+    companyName: string,
+    phoneNumber: string,
+    email: string,
+    makeModel: string,
+    description: string
+  ) {
+    {
+      this.fullName = fullName;
+      this.companyName = companyName;
+      this.phoneNumber = phoneNumber;
+      this.email = email;
+      this.makeModel = makeModel;
+      this.description = description;
+    }
   }
 }
