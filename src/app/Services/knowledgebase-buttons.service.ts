@@ -1,4 +1,4 @@
-import { HttpBackend, HttpClient } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { Injectable, OnInit } from '@angular/core';
 import { map } from 'rxjs';
 import { MediaData } from '../Models/media-data';
@@ -7,18 +7,10 @@ import { MediaData } from '../Models/media-data';
   providedIn: 'root',
 })
 export class KnowledgebaseButtonsService implements OnInit {
-<<<<<<< HEAD
-  constructor(private http: HttpClient) {
-  }
-  ngOnInit() {
-
-  }
-
-=======
   constructor(private http: HttpClient) {}
+
   ngOnInit() {}
 
->>>>>>> f7758d452a63749824faf80e06289e3bba92a688
   machineTypeButton: MediaData[] = [];
   newMedia = {};
   typeClicked: Boolean = true;
@@ -67,7 +59,9 @@ export class KnowledgebaseButtonsService implements OnInit {
     this.brandClicked = !this.brandClicked;
     this.modelClicked = !this.modelClicked;
     const filteredTypeArray = this.machineTypeButton.filter(
-      (filter) => filter.brand.trim() === this.brandSelected.trim()
+      (filter) =>
+        filter.brand.trim() === this.brandSelected.trim() &&
+        filter.type.trim() === this.typeSelected.trim()
     );
 
     this.uniqueModel = filteredTypeArray.filter((element) => {
@@ -84,7 +78,10 @@ export class KnowledgebaseButtonsService implements OnInit {
   uniqueMediaCards() {
     this.fetchMedia();
     this.uniqueMedia = this.machineTypeButton.filter(
-      (filter) => filter.model.trim() === this.modelSelected.trim()
+      (filter) =>
+        filter.model.trim() === this.modelSelected.trim() &&
+        filter.brand.trim() === this.brandSelected.trim() &&
+        filter.type.trim() === this.typeSelected.trim()
     );
     this.modelClicked = !this.modelClicked;
     this.mediaClicked = !this.mediaClicked;
@@ -106,12 +103,8 @@ export class KnowledgebaseButtonsService implements OnInit {
 
   public fetchMedia() {
     this.http
-<<<<<<< HEAD
-      .get<{ [key: string]: MediaData }>('https://stitch-it-support-site-default-rtdb.firebaseio.com/media.json'
-=======
       .get<{ [key: string]: MediaData }>(
         'https://stitch-it-support-site-default-rtdb.firebaseio.com/media.json'
->>>>>>> f7758d452a63749824faf80e06289e3bba92a688
       )
       .pipe(
         map((responseData) => {

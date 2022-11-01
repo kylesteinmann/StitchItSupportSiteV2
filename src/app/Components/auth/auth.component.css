@@ -36,10 +36,6 @@ input {
   background-color: white;
   height: 25px;
   border-radius: 5px;
-<<<<<<< HEAD
-=======
-  border: none;
->>>>>>> f7758d452a63749824faf80e06289e3bba92a688
 }
 .group {
   display: flex;

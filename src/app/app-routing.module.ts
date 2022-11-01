@@ -5,7 +5,6 @@ import { HeaderComponent } from './Components/header/header.component';
 import { SubmitSuccessComponent } from './Components/submit-success/submit-success.component';
 import { TrainingComponent } from './Components/training/training.component';
 import { AdminPortalComponent } from './Components/admin-portal/admin-portal.component';
-import { KnowledgebaseButtonsService } from './Services/knowledgebase-buttons.service';
 import { KnowledgebaseComponent } from './Components/knowledgebase/knowledgebase.component';
 import { AuthComponent } from './Components/auth/auth.component';
 
