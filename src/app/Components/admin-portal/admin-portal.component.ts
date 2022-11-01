@@ -41,10 +41,6 @@ export class AdminPortalComponent implements OnInit, OnDestroy {
     );
   }
 
-  resetForm() {
-    this.addMediaForm.reset(this.addMediaForm.value);
-  }
-
   ngOnDestroy() {
     this.userSub.unsubscribe();
   }

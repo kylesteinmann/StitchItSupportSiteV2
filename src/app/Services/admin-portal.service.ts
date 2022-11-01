@@ -9,14 +9,11 @@ import { exhaustMap, take } from 'rxjs';
   providedIn: 'root',
 })
 export class AdminPortalService implements OnInit {
-<<<<<<< HEAD
+
   constructor(private http: HttpClient,
-    private knowledgebaseButtonsService: KnowledgebaseButtonsService, private authService:AuthService
-=======
-  constructor(
-    private http: HttpClient,
-    private knowledgebaseButtonsService: KnowledgebaseButtonsService
->>>>>>> f7758d452a63749824faf80e06289e3bba92a688
+    private knowledgebaseButtonsService: KnowledgebaseButtonsService,
+    private authService:AuthService
+
   ) {}
 
   ngOnInit(): void {
@@ -78,6 +75,8 @@ export class AdminPortalService implements OnInit {
     return unique;
   }
 
+
+
   addMedia(newMedia: {
     type: string;
     brand: string;
@@ -94,6 +93,7 @@ export class AdminPortalService implements OnInit {
         newMedia
       )
     })).subscribe()
+    this.addMediaForm.reset(this.addMediaForm)
 
   }
 }
