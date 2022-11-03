@@ -29,9 +29,9 @@ button {
 
 mat-card {
   color: white;
-  max-width: 250px;
+  width: 35vw;
   min-width: 175px;
-  margin: 20px;
+  margin: 5px;
   background-color: #d21919;
 }
 .mediaContainer {
@@ -54,8 +54,13 @@ a {
 mat-card-content {
   padding: 0;
   margin: 0;
+
 }
 
 mat-card-title {
+  display: flex;
+  justify-content: space-between;
   font-size: large;
+  margin: 0;
+  padding: 0;
 }
