@@ -4,6 +4,7 @@ import { KnowledgebaseButtonsService } from './knowledgebase-buttons.service';
 import { HttpClient } from '@angular/common/http';
 import { AuthService } from './auth.service';
 import { exhaustMap, take } from 'rxjs';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root',
@@ -12,9 +13,10 @@ export class AdminPortalService implements OnInit {
 
   constructor(private http: HttpClient,
     private knowledgebaseButtonsService: KnowledgebaseButtonsService,
-    private authService:AuthService
+    private authService: AuthService,
+    private router: Router
 
-  ) {}
+  ) { }
 
   ngOnInit(): void {
     this.addMediaForm = new FormGroup({
@@ -84,16 +86,14 @@ export class AdminPortalService implements OnInit {
     media: string;
     mediaType: string;
     mediaName: string;
-    mediaDescription: string;}) {
-    this.authService.user.pipe(take(1), exhaustMap( user => {
-      console.log(user)
+    mediaDescription: string;
+  }) {
+    this.authService.user.pipe(take(1), exhaustMap(user => {
       return this.http
-      .post(
-        'https://stitch-it-support-site-default-rtdb.firebaseio.com/media.json?auth=' + user.token,
-        newMedia
-      )
+        .post(
+          'https://stitch-it-support-site-default-rtdb.firebaseio.com/media.json?auth=' + user.token,
+          newMedia
+        );
     })).subscribe()
-    this.addMediaForm.reset(this.addMediaForm)
-
   }
 }

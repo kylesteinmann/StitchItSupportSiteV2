@@ -1,6 +1,6 @@
 <form
   [formGroup]="addMediaForm"
-  (ngSubmit)="adminPortal.addMedia(addMediaForm.value)"
+  (ngSubmit)="adminPortalService.addMedia(addMediaForm.value); addMediaForm.reset()"
   *ngIf="authService.isAuthenticated"
 >
   <div class="section">
@@ -10,7 +10,7 @@
         <mat-select formControlName="type">
           <mat-option
             [value]="option.type"
-            *ngFor="let option of adminPortal.types()"
+            *ngFor="let option of adminPortalService.types()"
           >
             {{ option.type }}
           </mat-option>
@@ -29,7 +29,7 @@
         <mat-select formControlName="brand">
           <mat-option
             [value]="option.brand"
-            *ngFor="let option of adminPortal.brands()"
+            *ngFor="let option of adminPortalService.brands()"
           >
             {{ option.brand }}
           </mat-option>
@@ -48,7 +48,7 @@
         <mat-select formControlName="model">
           <mat-option
             [value]="option.model"
-            *ngFor="let option of adminPortal.models()"
+            *ngFor="let option of adminPortalService.models()"
           >
             {{ option.model }}
           </mat-option>
@@ -88,7 +88,7 @@
       <mat-label>Media Description</mat-label>
       <textarea matInput formControlName="mediaDescription"></textarea>
     </mat-form-field>
-    <button class="submit" mat-raised-button type="submit">Submit</button>
+    <button class="submit" mat-raised-button type="submit" >Submit</button>
   </div>
 </form>
 

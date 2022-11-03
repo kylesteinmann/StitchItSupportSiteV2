@@ -19,7 +19,7 @@ export class AdminPortalComponent implements OnInit, OnDestroy {
 
   constructor(
     public knowledgebaseButtonsService: KnowledgebaseButtonsService,
-    public adminPortal: AdminPortalService,
+    public adminPortalService: AdminPortalService,
     public authService: AuthService
   ) {}
 
