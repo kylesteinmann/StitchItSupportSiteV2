@@ -9,5 +9,7 @@ import { TicketService } from 'src/app/Services/ticket.service';
 export class SupportFormComponent implements OnInit {
   constructor(public ticketService: TicketService) {}
 
+  jotFormUrl = "https://submit.jotform.us/submit/93375041647157/"
+
   ngOnInit(): void {}
 }

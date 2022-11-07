@@ -1,34 +1,35 @@
-<form
-  (ngSubmit)="ticketService.onSubmitForm(f)"
-  #f="ngForm"
-  *ngIf="ticketService.ticketSubmitted.success === 'false'"
->
+<form ngNoForm [action]="jotFormUrl" method="POST">
+  <input type="hidden" name="formID" value="93375041647157" />
+  <input type="hidden" id="JWTContainer" value="" />
+  <input type="hidden" id="cardinalOrderNumber" value="" />
   <fieldset>
     <span>*Please fill in all required information to submit.</span>
     <div class="group">
       <div>
         <label for="fullName">*Full Name:</label>
-        <input type="text" id="fullName" ngModel name="fullName" required />
+
+        <input type="text" id="fullName" name="q8_fullName[first]" required />
       </div>
       <div>
         <label for="companyName">Company Name:</label>
-        <input type="text" id="companyName" ngModel name="companyName" />
+        <input type="text" id="companyName" name="q69_companyName" />
       </div>
     </div>
     <div class="group">
       <div>
         <label for="phoneNumber">*Phone Number:</label>
-        <input type="text" id="phoneNumber" ngModel name="phoneNumber" />
+        <input type="text" id="phoneNumber" name="q73_phoneNumber73" />
       </div>
       <div>
         <label for="email">*Email:</label>
-        <input type="text" id="email" ngModel name="email" required email />
+        <input type="text" id="email" name="q5_email" required email />
       </div>
     </div>
     <div class="group">
       <div>
         <label for="makeModel" requied>*Make & Model:</label>
-        <select name="makeModel" id="model" ngModel>
+        <select name="q70_typeA" id="model">
+          <option value=""></option>
           <option value="OKI C711WT">OKI C711WT</option>
           <option value="OKI 842WT">OKI 842WDT</option>
           <option value="OKI PRO9541WT">OKI 9541WDT</option>
@@ -56,19 +57,10 @@
       </div>
       <div>
         <label>*Description of Issue:</label>
-        <textarea
-          id="description"
-          ngModel
-          name="description"
-          required
-        ></textarea>
+        <textarea id="description" name="q71_typeA71" required></textarea>
       </div>
     </div>
-    <button mat-flat-button type="submit" [disabled]="!f.valid">Submit</button>
+    <button mat-flat-button type="submit">Submit</button>
   </fieldset>
 </form>
-<div class="messageContainer">
-  <app-submit-success
-    *ngIf="ticketService.ticketSubmitted.success === 'true'"
-  ></app-submit-success>
-</div>
+<div class="messageContainer"></div>
