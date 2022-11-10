@@ -1,4 +1,4 @@
-import { NgForm } from '@angular/forms';
+
 
 export class Ticket {
   public fullName: string;
