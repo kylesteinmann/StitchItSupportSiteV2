@@ -1,6 +1,8 @@
 <form
   [formGroup]="addMediaForm"
-  (ngSubmit)="adminPortalService.addMedia(addMediaForm.value); addMediaForm.reset()"
+  (ngSubmit)="
+    adminPortalService.addMedia(addMediaForm.value); addMediaForm.reset()
+  "
   *ngIf="authService.isAuthenticated"
 >
   <div class="section">
@@ -16,7 +18,13 @@
           </mat-option>
         </mat-select>
       </mat-form-field>
-      <button class="addButton" mat-raised-button (click)="newTypeToggle = !newTypeToggle">+</button>
+      <button
+        class="addButton"
+        mat-raised-button
+        (click)="newTypeToggle = !newTypeToggle"
+      >
+        +
+      </button>
     </div>
     <mat-form-field class="type" appearance="fill" *ngIf="newTypeToggle">
       <mat-label>Type</mat-label>
@@ -35,7 +43,13 @@
           </mat-option>
         </mat-select>
       </mat-form-field>
-      <button class="addButton" mat-raised-button (click)="newBrandToggle = !newBrandToggle">+</button>
+      <button
+        class="addButton"
+        mat-raised-button
+        (click)="newBrandToggle = !newBrandToggle"
+      >
+        +
+      </button>
     </div>
     <mat-form-field class="brand" appearance="fill" *ngIf="newBrandToggle">
       <mat-label>Brand</mat-label>
@@ -54,7 +68,13 @@
           </mat-option>
         </mat-select>
       </mat-form-field>
-      <button class="addButton" mat-raised-button (click)="newModelToggle = !newModelToggle">+</button>
+      <button
+        class="addButton"
+        mat-raised-button
+        (click)="newModelToggle = !newModelToggle"
+      >
+        +
+      </button>
     </div>
     <mat-form-field class="model" appearance="fill" *ngIf="newModelToggle">
       <mat-label>Model</mat-label>
@@ -88,25 +108,26 @@
       <mat-label>Media Description</mat-label>
       <textarea matInput formControlName="mediaDescription"></textarea>
     </mat-form-field>
-    <button class="submit" mat-raised-button type="submit" >Submit</button>
+    <button class="submit" mat-raised-button type="submit">Submit</button>
   </div>
-  <h1>Please select an option to narrow down your search.<button class="startOver"  (click)="knowledgebaseButtonsService.startOver()">StartOver</button></h1>
-
+  <h1>
+    Please select an option to narrow down your search.<button
+      class="startOver"
+      (click)="knowledgebaseButtonsService.startOver()"
+    >
+      StartOver
+    </button>
+  </h1>
 </form>
 
 <div class="errorContainer">
   <h1 *ngIf="!authService.isAuthenticated">Incorrect username or password!</h1>
-
 </div>
 
-<div class="container"*ngIf="authService.isAuthenticated">
-
+<div class="container" *ngIf="authService.isAuthenticated">
   <div class="buttonContainer" *ngIf="knowledgebaseButtonsService.typeClicked">
-
-
-
-
-    <button class="selectionButtons"
+    <button
+      class="selectionButtons"
       *ngFor="let button of knowledgebaseButtonsService.uniqueTypeButtons()"
       #buttonSelected
       (click)="
@@ -119,7 +140,8 @@
   </div>
 
   <div class="buttonContainer" *ngIf="knowledgebaseButtonsService.brandClicked">
-    <button class="selectionButtons"
+    <button
+      class="selectionButtons"
       *ngFor="let button of knowledgebaseButtonsService.uniqueBrand"
       #buttonSelected
       (click)="
@@ -132,7 +154,8 @@
   </div>
 
   <div class="buttonContainer" *ngIf="knowledgebaseButtonsService.modelClicked">
-    <button class="selectionButtons"
+    <button
+      class="selectionButtons"
       *ngFor="let button of knowledgebaseButtonsService.uniqueModel"
       #buttonSelected
       (click)="
@@ -146,13 +169,17 @@
 
   <div class="mediaContainer" *ngIf="knowledgebaseButtonsService.mediaClicked">
     <mat-card *ngFor="let item of knowledgebaseButtonsService.uniqueMedia">
+      <mat-card-title
+        >{{ item.mediaTitle }}
 
-        <mat-card-title
-          >{{ item.mediaTitle }}
-
-          <button class = "deleteButton"  (click)="knowledgebaseButtonsService.deleteCard(item.id)">Delete</button></mat-card-title
+        <button
+          class="deleteButton"
+          (click)="knowledgebaseButtonsService.deleteCard(item.id)"
         >
-        <mat-card-content> {{ item.mediaDescription }}</mat-card-content>
+          Delete
+        </button></mat-card-title
+      >
+      <mat-card-content> {{ item.mediaDescription }}</mat-card-content>
     </mat-card>
   </div>
 </div>
