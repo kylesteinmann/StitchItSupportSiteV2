@@ -2,14 +2,16 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable, OnInit } from '@angular/core';
 import { map } from 'rxjs';
 import { MediaData } from '../Models/media-data';
+import { AuthService } from './auth.service';
+
 
 @Injectable({
   providedIn: 'root',
 })
 export class KnowledgebaseButtonsService implements OnInit {
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private authService:AuthService) { }
 
-  ngOnInit() {}
+  ngOnInit() { }
 
   machineTypeButton: MediaData[] = [];
   newMedia = {};
@@ -120,5 +122,14 @@ export class KnowledgebaseButtonsService implements OnInit {
       .subscribe((media) => {
         this.machineTypeButton = media;
       });
+
+  }
+  deleteCard(id: string) {
+    console.log(this.authService.user)
+    this.http.delete('https://stitch-it-support-site-default-rtdb.firebaseio.com/media/'
+     + id + '.json?auth=' + this.authService.user.value.token).subscribe(() => {
+      this.uniqueMediaCards()
+
+    })
   }
 }

@@ -23,7 +23,7 @@ textarea {
   justify-content: center;
   align-items: center;
 }
-button {
+.addButton, .submit, .startOver, .selectionButtons{
   margin: 0px;
   font-weight: 550;
   font-size: large;
@@ -31,6 +31,21 @@ button {
   color: white;
   border: none;
   border-radius: 5px;
+
+}
+
+.addButton  {
+  padding: 0px 0px;
+  margin: 3px;
+}
+.startOver {
+  padding: 10px 15px;
+  margin: 0 20px;
+
+}
+.selectionButtons{
+  padding: 10px 15px;
+  margin: 20px 20px;
 }
 
 .individualFields {
@@ -47,4 +62,79 @@ button {
   margin: 20px;
   display: flex;
   justify-content: center;
+}
+
+
+
+
+
+
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 40px 0 0 0;
+  flex-wrap: wrap;
+}
+h1 {
+  display: flex;
+  color: black;
+  font-size: 25px;
+  font-weight: 500;
+  padding: 10px;
+  margin: 0;
+  justify-content: center;
+}
+
+.deleteButton {
+  padding: 2px 4px;
+  font-weight: 550;
+  font-size: small;
+  background-color: white;
+  color:#d21919;
+  border: none;
+  border-radius: 5px;
+}
+button{
+  cursor: pointer;
+}
+
+mat-card {
+  color: white;
+  width: 35vw;
+  min-width: 175px;
+  margin: 5px;
+  background-color: #d21919;
+}
+.mediaContainer {
+  display: flex;
+  justify-content: center;
+}
+a {
+  text-decoration: none;
+  color: white;
+}
+.mediaContainer,
+.buttonContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 75%;
+}
+
+mat-card-content {
+  padding: 0;
+  margin: 0;
+
+}
+
+mat-card-title {
+  display: flex;
+  justify-content: space-between;
+  font-size: large;
+  margin: 0;
+  padding: 0;
 }

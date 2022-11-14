@@ -22,7 +22,7 @@ export class AuthService {
   user = new BehaviorSubject<User>(null);
   isAuthenticated = false
 
-  constructor(private http: HttpClient, private router:Router) {}
+  constructor(private http: HttpClient) {}
 
 
   login(email: string, password: string) {
