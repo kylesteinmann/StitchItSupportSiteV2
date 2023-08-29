@@ -6,6 +6,7 @@ export class Ticket {
   public phoneNumber: string;
   public email: string;
   public makeModel: string;
+  public serialNumber: string;
   public description: string;
 
   constructor(
@@ -14,6 +15,7 @@ export class Ticket {
     phoneNumber: string,
     email: string,
     makeModel: string,
+    serialNumber:string,
     description: string
   ) {
     {
@@ -22,6 +24,7 @@ export class Ticket {
       this.phoneNumber = phoneNumber;
       this.email = email;
       this.makeModel = makeModel;
+      this.serialNumber = serialNumber;
       this.description = description;
     }
   }

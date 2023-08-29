@@ -12,6 +12,7 @@ export class TicketService {
     companyName: '',
     email: '',
     makeModel: '',
+    serialNumber: '',
     description: '',
     phoneNumber: '',
   };
@@ -25,6 +26,7 @@ export class TicketService {
       email: form.value.email,
       phoneNumber: form.value.phoneNumber,
       makeModel: form.value.makeModel,
+      serialNumber:form.value.serialNumber,
       description: form.value.description,
     };
     this.ticketSubmitted.success = 'true';

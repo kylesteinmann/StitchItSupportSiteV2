@@ -8,6 +8,7 @@ form {
 fieldset {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   border: none;
   border-radius: 10px;
   background-color: #d21919;
@@ -37,6 +38,7 @@ button {
 .group {
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
 }
 #description {
   height: 60px;
